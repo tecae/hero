@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="ua">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Hero</title>
+    <style>
+        body {
+            margin: 0px;
+            background: #0600FF;
+            background: -moz-linear-gradient(45deg, #0600FF 0%, #FF0391 50%, #F4FF2E 100%);
+            background: -webkit-linear-gradient(45deg, #0600FF 0%, #FF0391 50%, #F4FF2E 100%);
+            background: linear-gradient(45deg, #0600FF 0%, #FF0391 50%, #F4FF2E 100%);
+        }
+
+        nav {
+            padding: 9px;
+            position: fixed;
+            height: 55px;
+            width: 100%;
+            text-shadow: 2px 2px 2px #3AC2CE;
+        }
+
+        .page {
+            padding-top: 33px;
+            margin-left: 16px;
+            margin-right: 16px;
+        }
+
+        .search-container {
+            margin-top: 33px;
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+        }
+
+        .search {
+            grid-column-start: 2;
+            justify-self: center;
+
+        }
+
+        #search {
+            font-size: 19px;
+            padding-left: 16px;
+            outline: 0px solid #1C6EA4;
+            outline-offset: 0px;
+            border: 1px solid #B24800;
+            border-radius: 40px 0px 40px 0px;
+        }
+
+        #search-btn {
+            padding: 9px;
+            font-family: Georgia, serif;
+            font-size: 17px;
+            letter-spacing: 2px;
+            word-spacing: 2px;
+            color: #000000;
+            font-weight: normal;
+            text-decoration: none;
+            font-style: normal;
+            font-variant: normal;
+            text-transform: none;
+            border: 1px solid #1C6EA4;
+            border-radius: 36px 40px 40px 40px;
+            background: #0837C5;
+            background: -moz-radial-gradient(center, #0837C5 0%, #0BD3DB 50%, #0837C5 100%);
+            background: -webkit-radial-gradient(center, #0837C5 0%, #0BD3DB 50%, #0837C5 100%);
+            background: radial-gradient(ellipse at center, #0837C5 0%, #0BD3DB 50%, #0837C5 100%);
+        }
+
+        #search-btn:hover {
+            -moz-transform: scale(1.8);
+            -webkit-transform: scale(1.8);
+            -o-transform: scale(1.8);
+            -ms-transform: scale(1.8);
+            transform: scale(1.8);
+            outline: 0px solid #1C6EA4;
+            outline-offset: 0px;
+        }
+
+        #search-btn:focus {
+            outline: 0px solid #1C6EA4;
+            outline-offset: 0px;
+        }
+
+        #contenthero {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            grid-template-rows: auto;
+        }
+
+        .primary_attr {
+            grid-area: 2;
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+            margin: 9px;
+            padding: 9px;
+            -webkit-box-shadow: 5px 5px 15px 5px #000000;
+            box-shadow: 5px 5px 15px 5px #000000;
+            justify-content: center;
+            /*  */
+            -moz-transform: scale(0.4);
+            -webkit-transform: scale(0.4);
+            -o-transform: scale(0.4);
+            -ms-transform: scale(0.4);
+            transform: scale(0.4);
+
+        }
+
+        .primary_attr-find {
+            -moz-transform: none;
+            -webkit-transform: none;
+            -o-transform: none;
+            -ms-transform: none;
+            transform: none;
+        }
+
+        .primary_attr:hover {
+            -moz-transform: none;
+            -webkit-transform: none;
+            -o-transform: none;
+            -ms-transform: none;
+            transform: none;
+        }
+
+        .hero {
+            justify-content: center;
+            height: 55px;
+            width: 100%;
+            justify-self: center;
+            align-self: center;
+            border: 1px solid rgb(255, 255, 255);
+            color: rgb(0, 0, 0);
+            text-align: center;
+            text-shadow: 3px 2px 3px rgba(255, 255, 255, .2);
+            cursor: pointer;
+            vertical-align: middle;
+        }
+
+        .hero:hover {
+            -moz-transform: scale(1.2);
+            -webkit-transform: scale(1.2);
+            -o-transform: scale(1.2);
+            -ms-transform: scale(1.2);
+            transform: scale(1.2);
+        }
+
+        .hero-find {
+            -webkit-box-shadow: 4px -4px 15px 0px #FF1F1F, 12px -11px 7px 0px #FF9376, 20px -5px 7px 0px #FFE264, 20px 6px 7px 0px #F6FF33, 13px 12px 17px 0px #FF9527, 2px 17px 17px 0px #FF0000, -9px 21px 18px 0px #FFF212, -9px 6px 11px 0px #FF0808, -11px -9px 11px 0px #FFFA17, -11px -9px 11px 0px #FFFA17, 5px 5px 15px 5px rgba(251, 255, 0, 0);
+            box-shadow: 4px -4px 15px 0px #FF1F1F, 12px -11px 7px 0px #FF9376, 20px -5px 7px 0px #FFE264, 20px 6px 7px 0px #F6FF33, 13px 12px 17px 0px #FF9527, 2px 17px 17px 0px #FF0000, -9px 21px 18px 0px #FFF212, -9px 6px 11px 0px #FF0808, -11px -9px 11px 0px #FFFA17, -11px -9px 11px 0px #FFFA17, 5px 5px 15px 5px rgba(251, 255, 0, 0);
+        }
+
+        .hero-skil {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+        }
+
+        .hero-name {
+            font-family: Georgia, serif;
+            font-size: 32px;
+            letter-spacing: 2px;
+            word-spacing: 2px;
+            color: #00F3FC;
+            font-weight: normal;
+            text-decoration: none;
+            font-style: italic;
+            font-variant: small-caps;
+            text-transform: none;
+        }
+
+        .hero-skil-name {
+            font-size: 23px;
+            border-bottom: 1px solid #00F3FC;
+        }
+
+        .hero-skil-val {
+            font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+            font-size: 22px;
+            letter-spacing: 0.2px;
+            word-spacing: 2.2px;
+            color: #FFFC00;
+            font-weight: 400;
+            text-decoration: none solid rgb(68, 68, 68);
+            font-style: normal;
+            font-variant: small-caps;
+            text-transform: none;
+        }
+
+        .hero-attack-type {
+            font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+            font-size: 22px;
+            letter-spacing: 0.2px;
+            word-spacing: 2.2px;
+            color: #00FF27;
+            font-weight: 400;
+            text-decoration: none solid rgb(68, 68, 68);
+            font-style: normal;
+            font-variant: small-caps;
+            text-transform: none;
+        }
+
+        .hero-role {
+            font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+            font-size: 18px;
+            letter-spacing: 0.2px;
+            word-spacing: 2.2px;
+            color: #625AFF;
+            font-weight: 400;
+            text-decoration: none solid rgb(68, 68, 68);
+            font-style: normal;
+            font-variant: small-caps;
+            text-transform: none;
+        }
+
+        .up-to-home {
+            outline: 0px solid #1C6EA4;
+            outline-offset: 0px;
+            color: rgb(188, 255, 3);
+            font-size: 32px;
+            border-width: 1px;
+            border-style: solid;
+            border-color: #29FAFF;
+            border-radius: 40px 40px 40px 40px;
+            background: #FF00F9;
+            background: -moz-radial-gradient(center, #FF00F9 0%, #00F5FF 39%, #FF00FB 100%);
+            background: -webkit-radial-gradient(center, #FF00F9 0%, #00F5FF 39%, #FF00FB 100%);
+            background: radial-gradient(ellipse at center, #FF00F9 0%, #00F5FF 39%, #FF00FB 100%);
+        }
+
+        .up-to-home:hover {
+            -moz-transform: scale(1.4) rotate(360deg);
+            -webkit-transform: scale(1.4) rotate(360deg);
+            -o-transform: scale(1.4) rotate(360deg);
+            -ms-transform: scale(1.4) rotate(360deg);
+            transform: scale(1.4) rotate(360deg);
+        }
+
+        .agi {
+            /* font-family: Georgia, serif;
+            font-size: 17px;
+            letter-spacing: 2px;
+            word-spacing: 2px;
+            color: #00E9FF;
+            font-weight: 700;
+            text-decoration: none;
+            font-style: normal;
+            font-variant: normal;
+            text-transform: uppercase; */
+
+        }
+
+        .str {
+            /* font-family: Georgia, serif;
+            font-size: 17px;
+            letter-spacing: 2px;
+            word-spacing: 2px;
+            color: #00E9FF;
+            font-weight: 700;
+            text-decoration: none;
+            font-style: normal;
+            font-variant: normal;
+            text-transform: uppercase; */
+        }
+
+        .int {
+            /* font-family: Georgia, serif;
+            font-size: 17px;
+            letter-spacing: 2px;
+            word-spacing: 2px;
+            color: #00E9FF;
+            font-weight: 700;
+            text-decoration: none;
+            font-style: normal;
+            font-variant: normal;
+            text-transform: uppercase; */
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav>
+        <h2>Drink vodka, Play Dotka 🤮</h2>
+    </nav>
+    <!-- сторінка HOME INDEX  -->
+    <div id="hero" class="page">
+        <div class="search-container">
+            <div class="search">
+                <input type="text" name="search" id="search" oninput="handleOnInput()" placeholder="👁 Search">
+                <input type="button" id="search-btn" onclick="handleSearch()" value="👁">
+            </div>
+        </div>
+        <div id="contenthero"></div>
+    </div>
+    <!-- сторінка heroname -->
+    <div id="heroname" class="page">
+        <button class="up-to-home" onclick="window.scrollTo( 0, 0 )">&#9650;</button>
+        <div id="herostatus">
+
+        </div>
+    </div>
+    <!-- сторінка notFound  -->
+    <div id="notFound" class="page">
+        <h1>Page not found 404.</h1>
+        <button class="up-to-home" onclick="window.scrollTo( 0, 0 )">&#9650;</button>
+    </div>
+
+    <script>
+        function handleSearch() {
+            alert("TODO: пошук інакше.")
+        }
+        function handleOnInput() {
+            var value = document.getElementById("search").value;
+
+            console.log(value)
+            setTimeout(function () {
+                for (let index = 0; index < heroes.length; index++) {
+                    /**ПРИ ВЕЛИКИХ ОБЄМАХ ДАНИХ ЗМІНИТИ ПОШУК*/
+
+                    if (value && heroes[index].localized_name.indexOf(value) != -1) {
+                        document.getElementById(index).classList.add("hero-find");
+                    } else {
+                        document.getElementById(index).classList.remove("hero-find");
+                    }
+                }
+            }, 600)
+
+        }
+
+        function paintHero() {
+            // ЗАВАНТАЖЕННЯ ШАБЛОНУ
+            var heroename = document.getElementById("heroname");
+
+            var pre = document.getElementById("herostatus")
+            pre.remove();
+
+            var div = document.createElement("div");
+            div.setAttribute("id", "herostatus");
+
+            div.innerHTML = `
+            <div class="hero-name">${curentHero.localized_name} </div>
+            <div class="hero-attack-type">🔫Attack type: <strong>${curentHero.attack_type}</strong> </div>
+            <div class="hero-role">Roles: <strong>${curentHero.roles}</strong> </div>
+            <div class="hero-skil">
+                <div class="hero-skil-name">💊 Base health:</div>
+                <div class="hero-skil-val">${curentHero.base_health}</div>
+                <div class="hero-skil-name">💉Base health regen:</div>
+                <div class="hero-skil-val">${curentHero.base_health_regen}</div>
+                <div class="hero-skil-name">⚗ Base mana regen:</div>
+                <div class="hero-skil-val">${curentHero.base_mana_regen}</div>
+                <div class="hero-skil-name">🔫 Base attack:</div>
+                <div class="hero-skil-val">${curentHero.base_attack_min}-${curentHero.base_attack_max}</div>
+                <div class="hero-skil-name">Base str:</div>
+                <div class="hero-skil-val">${curentHero.base_str}</div>
+                <div class="hero-skil-name">Base int:</div>
+                <div class="hero-skil-val">${curentHero.base_int}</div>
+                <div class="hero-skil-name">Base agi:</div>
+                <div class="hero-skil-val">${curentHero.base_agi}</div>
+                <div class="hero-skil-name">💨 Move speed:</div>
+                <div class="hero-skil-val">${curentHero.move_speed}</div>
+            </div>
+            `;
+
+
+            heroename.appendChild(div);
+        }
+        function handleOnClick(e) {
+            var id = e.target.getAttribute("id");
+            curentHero = heroes[id];
+
+            paintHero()
+            // імітація router.push("/:heroename")
+            setTimeout(function () {
+                window.scrollTo(0, document.documentElement.clientHeight);
+            }, 100);
+        }
+
+    </script>
+
+    <script>
+        var heroes = null;
+        var curentHero = null;
+        var xhr = new XMLHttpRequest();
+
+        document.body.style.overflow = "hidden";
+
+        var elementsList = document.getElementsByClassName("page");
+
+        for (var i = 0; i < elementsList.length; i++) {
+
+            elementsList[i].style.width = document.documentElement.clientWidth + 'px';
+            elementsList[i].style.height = document.documentElement.clientHeight + 'px';
+        }
+
+        document.addEventListener("DOMContentLoaded", function (e) {
+            xhr.open('GET', 'https://api.opendota.com/api/heroStats', false);
+            xhr.send();
+            if (xhr.status != 200) {
+                /** імітація router.push("/:notFound")*/
+                setTimeout(function () {
+                    window.scrollTo(0, document.documentElement.clientHeight * 2);
+                }, 100);
+            } else {
+                heroes = JSON.parse(xhr.responseText);
+
+                var loc = {
+                    "agi": "strength",
+                    "str": "intelligence",
+                    "int": "agility"
+                }
+
+                var contenthero = document.getElementById("contenthero");
+
+                for (let key = 0; key < heroes.length; key++) {
+                    if (!!!document.getElementById(heroes[key].primary_attr)) {
+                        var divP = document.createElement("div")
+                        divP.className = heroes[key].primary_attr;
+                        divP.innerText = loc[heroes[key].primary_attr];
+                        var div = document.createElement("div")
+
+                        div.setAttribute("id", `${heroes[key].primary_attr}`)
+                        div.className = "primary_attr ";
+                        // div.innerText = loc[heroes[key].primary_attr]; // <<<<<< !!! УВАГА
+                        divP.appendChild(div);
+                        contenthero.appendChild(divP);
+                    }
+
+                    var primary_attr = document.getElementById(heroes[key].primary_attr)
+                    var div = document.createElement("div")
+                    div.setAttribute("id", key);
+                    div.className = "hero";
+                    div.onclick = handleOnClick;
+                    div.innerText = `${heroes[key].localized_name}`;
+                    primary_attr.appendChild(div);
+
+                }
+            }
+
+          
+        })
+    </script>
+</body>
+
+</html>
